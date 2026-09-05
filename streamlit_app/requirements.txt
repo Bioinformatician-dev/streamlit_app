@@ -1,20 +1,9 @@
-# streamlit-drawable-canvas (the ruler tool) still uses Streamlit's older
-# "v1" component API, which newer Streamlit releases (>=1.4x) have dropped
-# support for. Pin both together at a combo that's known to work; if you
-# upgrade Streamlit later, re-check streamlit-drawable-canvas's releases
-# for a compatible pairing first.
-streamlit==1.28.0
-streamlit-drawable-canvas==0.9.3
-opencv-python-headless>=4.9,<4.10
-numpy>=1.26,<2
-pandas>=2.2
-Pillow>=10.0
-jinja2>=3.1
-ultralytics>=8.0.0
-
-# NOTE: ultralytics declares a hard dependency on plain "opencv-python"
-# (the GUI build), not the headless one pinned above. On a headless
-# deploy target (Streamlit Cloud, slim Docker) that GUI build needs
-# libGL.so.1 and friends, which usually aren't installed by default.
-# See packages.txt for the system libs that cover this on Debian/Ubuntu
-# based images.
+streamlit
+ultralytics
+opencv-python-headless
+numpy
+pandas
+Pillow
+openpyxl
+plotly
+scipy
