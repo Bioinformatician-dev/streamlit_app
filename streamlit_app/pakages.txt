@@ -1,0 +1,13 @@
+# System-level (apt) packages needed alongside requirements.txt.
+# Streamlit Cloud reads this file automatically and apt-installs each line
+# before your Python requirements are installed. If you're deploying via
+# your own Dockerfile instead, run:
+#   apt-get update && apt-get install -y --no-install-recommends $(cat packages.txt)
+#
+# Why these are needed: ultralytics pulls in plain "opencv-python" (the
+# GUI build) as a hard dependency, even though this app pins
+# opencv-python-headless. Without these libs present, opencv-python
+# fails to import at runtime with errors like:
+#   ImportError: libGL.so.1: cannot open shared object file
+libgl1
+libglib2.0-0
