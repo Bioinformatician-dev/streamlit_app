@@ -10,4 +10,11 @@ numpy>=1.26,<2
 pandas>=2.2
 Pillow>=10.0
 jinja2>=3.1
-ultralytics>=8.2
+ultralytics>=8.0.0
+
+# NOTE: ultralytics declares a hard dependency on plain "opencv-python"
+# (the GUI build), not the headless one pinned above. On a headless
+# deploy target (Streamlit Cloud, slim Docker) that GUI build needs
+# libGL.so.1 and friends, which usually aren't installed by default.
+# See packages.txt for the system libs that cover this on Debian/Ubuntu
+# based images.
