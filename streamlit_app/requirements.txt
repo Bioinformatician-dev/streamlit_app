@@ -1,0 +1,13 @@
+# streamlit-drawable-canvas (the ruler tool) still uses Streamlit's older
+# "v1" component API, which newer Streamlit releases (>=1.4x) have dropped
+# support for. Pin both together at a combo that's known to work; if you
+# upgrade Streamlit later, re-check streamlit-drawable-canvas's releases
+# for a compatible pairing first.
+streamlit==1.28.0
+streamlit-drawable-canvas==0.9.3
+opencv-python-headless>=4.9,<4.10
+numpy>=1.26,<2
+pandas>=2.2
+Pillow>=10.0
+jinja2>=3.1
+ultralytics>=8.2
